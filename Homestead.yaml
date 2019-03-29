@@ -1,0 +1,28 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - C:/Users/ivan.atanasov/.ssh/id_rsa
+
+folders:
+    - map: C:/MySpace/ProjectsDevel
+      to: /home/vagrant/projects
+
+sites:
+    - map: pma.homestead.lh
+      to: /home/vagrant/projects/phpmyadmin
+    # New Junona project
+    - map: junona.lh
+      to: /home/vagrant/projects/SalaryJ_2/public
+      type: symfony4
+    - map: old.junona.lh
+      to: /home/vagrant/projects/Junona_OLD/src/www
+
+databases:
+    - junona
+    - junona_old
